@@ -1,0 +1,8 @@
+google-adk
+google-generativeai==0.8.5
+python-dotenv==1.1.10
+mcp
+httpx==0.28.1
+googlesearch-python==1.3.0
+aiosqlite
+SQLAlchemy==2.0.44

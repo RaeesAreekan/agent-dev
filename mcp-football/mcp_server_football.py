@@ -159,7 +159,7 @@ async def get_leagues(search_query: str = None) -> str:
         filtered_results = []
         
         for league in data["results"]:
-            if search_query in league.get("name", "").lower():
+            if search_query.lower() in league.get("name", "").lower():
                 filtered_results.append({
                     "id": league.get("id"),
                     "name": league.get("name"),

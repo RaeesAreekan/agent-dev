@@ -21,21 +21,6 @@ async def send_alert(message: str) -> str:
         "Authorization": f"Bearer {os.getenv('HEYONCALL_AUTH_KEY')}",
         "Content-Type": "application/json"
     }
-    # The payload might need to be adjusted based on what HeyOnCall expects.
-    # Based on the user description, it seems it might just be a trigger, but passing data is usually good.
-    # The curl command didn't show a body, but usually alerts have some content.
-    # Let's assume we can pass a 'message' or similar. 
-    # However, the user provided curl command was:
-    # mcp add ... "HeyOnCall" ...
-    # And the JSON config.
-    # The curl command implies it's a GET or POST. Let's try POST with a body if message is provided.
-    # If the user just wants to trigger it, maybe the body isn't strictly required or is specific.
-    # Let's try sending the message in the body.
-    
-    # The server is an MCP server accepting JSON-RPC via POST.
-    # Tool name: HeyOnCall__set_alerting
-    # Arguments: payload: { message: ... }
-    
     json_rpc_payload = {
         "jsonrpc": "2.0",
         "id": 1,
